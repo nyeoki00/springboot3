@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header.html :: header">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="fragments/bodyheader.html :: bodyheader"></nav>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th th:text="${article.getId()}">1</th>
+        <td th:text="${article.getTitle()}">제목 1111</td>
+        <td th:text="${article.getContent()}">내용 1111</td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace="fragments/footer.html :: footer"></footer>
+</body>
+</html>
