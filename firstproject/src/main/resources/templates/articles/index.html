@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<th:block th:insert="~{layouts/header :: header}"></th:block>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="article : ${articleList}">
+        <th th:text="${article.id}">1</th>
+        <td>
+            <a th:text="${article.title}" th:href="@{|/articles/${article.id}|}"></a>
+        </td>
+        <td th:text="${article.content}">내용1111</td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/articles/new">New Article</a>
+
+<th:block th:insert="~{layouts/footer :: footer}"></th:block>
+
+</body>
+</html>

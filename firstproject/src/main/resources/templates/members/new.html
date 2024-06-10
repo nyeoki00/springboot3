@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div th:insert="~{layouts/header :: header}"></div>
+
+<form class="container" action="/members/create" method="post">
+    <div class="mb-3">
+        <label class="form-control" for="">이메일</label>
+        <input class="form-control" type="email" name="email" id="">
+    </div>
+    <div class="mb-3">
+        <label class="form-control" for="">비밀번호</label>
+        <input type="password" class="form-control" name="password" id="">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="/members">Back</a>
+</form>
+
+<div th:insert="~{layouts/footer :: footer}"></div>
+</body>
+</html>

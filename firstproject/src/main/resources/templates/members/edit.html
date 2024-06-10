@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<th:block th:insert="~{layouts/header :: header}"></th:block>
+
+<form class="container" action="/members/update" method="post">
+    <input type="hidden" name="id" th:value="${member.id}">
+
+    <input type="text" class="form-control" name="email" th:value="${member.email}">
+
+    <textarea class="form-control" name="password" id="" rows="3" th:text="${member.password}"></textarea>
+
+    <button type="submit" class="btn btn-primary">수정완료</button>
+    <a href="" th:href="@{|/members/${member.id}|}">Back</a>
+</form>
+
+<th:block th:insert="~{layouts/footer :: footer}"></th:block>
+</body>
+</html>

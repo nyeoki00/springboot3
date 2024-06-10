@@ -1,0 +1,19 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<!--  현재 디렉토리(~) 기준 layouts 디렉토리 하위의 `header`의 fragment 명이 header인 부분을 insert  -->
+<div th:insert="~{layouts/header :: header}"></div>
+
+<!--  content  -->
+<div class="bg-dark text-white p-5">
+    <h1 th:text="${username} + '님, 반갑습니다!'">xx님, 반갑습니다!</h1>
+</div>
+
+<div th:insert="~{layouts/footer :: footer}"></div>
+</body>
+</html>

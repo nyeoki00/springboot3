@@ -46,21 +46,21 @@ public class MemberController {
     public String index(Model model) {
         List<Member> memberEntityList = memberRepository.findAll();
         model.addAttribute("memberList", memberEntityList);
-        return "/members/index";
+        return "members/index";
     }
 
     @GetMapping("/members/{id}")
     public String show(@PathVariable Long id, Model model) {
         Member memberEntity = memberRepository.findById(id).orElse(null);
         model.addAttribute("member", memberEntity);
-        return "/members/show";
+        return "members/show";
     }
 
     @GetMapping("/members/{id}/edit")
     public String edit(@PathVariable Long id, Model model) {
         Member memberEntity =  memberRepository.findById(id).orElse(null);
         model.addAttribute("member", memberEntity);
-        return "/members/edit";
+        return "members/edit";
     }
 
     @PostMapping("/members/update")

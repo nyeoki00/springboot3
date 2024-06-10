@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<th:block th:insert="~{layouts/header :: header}"></th:block>
+
+<form class="container" action="/articles/update" method="post">
+    <input type="hidden" name="id" th:value="${article.id}">
+
+    <input type="text" class="form-control" name="title" th:value="${article.title}">
+
+    <textarea class="form-control" name="content" id="" rows="3" th:text="${article.content}"></textarea>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a th:href="@{|/articles/${article.id}|}">Back</a>
+</form>
+
+<th:block th:insert="~{layouts/footer :: footer}"></th:block>
+</body>
+</html>

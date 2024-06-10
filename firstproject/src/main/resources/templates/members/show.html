@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<th:block th:insert="~{layouts/header :: header}"></th:block>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th th:text="${member.id}">1</th>
+        <td th:text="${member.email}">제목1111</td>
+        <td th:text="${member.password}">내용1111</td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="" class="btn btn-primary" th:href="@{|/members/${member.id}/edit|}">수정하기</a>
+<a href="" class="btn btn-danger" th:href="@{|/members/${member.id}/delete|}">삭제하기</a>
+<a href="/members">Go to member list</a>
+
+<th:block th:insert="~{layouts/footer :: footer}"></th:block>
+
+</body>
+</html>

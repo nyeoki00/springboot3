@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div th:insert="~{layouts/header :: header}"></div>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th th:text="${article.id}">1</th>
+        <td th:text="${article.title}">제목1111</td>
+        <td th:text="${article.content}">내용1111</td>
+    </tr>
+    </tbody>
+</table>
+
+<a class="btn btn-primary" th:href="@{|/articles/${article.id}/edit|}">Edit</a>
+<a class="btn btn-danger" th:href="@{|/articles/${article.id}/delete|}">Delete</a>
+<a href="/articles">Go To Article List</a>
+
+<div th:insert="~{layouts/footer :: footer}"></div>
+</body>
+</html>

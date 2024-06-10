@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="utf-8" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div th:insert="~{layouts/header :: header}"></div>
+
+<form class="container" action="/articles/create" method="post">
+    <div class="mb-3">
+        <label class="form-control" for="">제목</label>
+        <input type="text" class="form-control" name="title" id="">
+    </div>
+    <div class="mb-3">
+        <label class="form-control" for="">내용</label>
+        <textarea class="form-control" rows="3" name="content"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="/articles">Back</a>
+</form>
+
+<div th:insert="~{layouts/footer :: footer}"></div>
+</body>
+</html>
