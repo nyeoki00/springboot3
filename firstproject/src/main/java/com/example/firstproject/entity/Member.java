@@ -9,10 +9,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @Data
-@Entity
 public class Member {
     @Id
     @GeneratedValue
@@ -24,4 +25,20 @@ public class Member {
     @Column
     private String password;
 
+//    public Member(String email, String password) {
+//        this.email = email;
+//        this.password = password;
+//    }
+//
+//    public Member() {
+//
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Member{" +
+//                "email='" + email + '\'' +
+//                ", password='" + password + '\'' +
+//                '}';
+//    }
 }
