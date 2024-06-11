@@ -6,6 +6,12 @@
 </head>
 <body>
 <nav th:replace="fragments/bodyheader.html :: bodyheader"></nav>
+
+    <div class="alert alert-primary alert-dismissible" th:text="${msg}">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+
 <table class="table">
     <thead>
     <tr>
