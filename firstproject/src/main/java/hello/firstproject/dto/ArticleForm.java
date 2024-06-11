@@ -7,10 +7,11 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ArticleForm {
+    private Long id;
     private String title;
     private String content;
 
     public Article toEntity() {
-        return new Article(null,this.title,this.content);
+        return new Article(id,this.title,this.content);
     }
 }

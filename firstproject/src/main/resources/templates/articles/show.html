@@ -16,12 +16,13 @@
     </thead>
     <tbody>
     <tr>
-        <th th:text="${article.getId()}">1</th>
-        <td th:text="${article.getTitle()}">제목 1111</td>
-        <td th:text="${article.getContent()}">내용 1111</td>
+        <th th:text="${article.id}">1</th>
+        <td th:text="${article.title}">제목 1111</td>
+        <td th:text="${article.content}">내용 1111</td>
     </tr>
     </tbody>
 </table>
+<a th:href="@{|/articles/${article.id}/edit|}" href="/articles/edit.html" class="btn btn-primary">Edit</a>
 <a th:href="@{/articles}" href="index.html">Go to Article List</a>
 <footer th:replace="fragments/footer.html :: footer"></footer>
 </body>
