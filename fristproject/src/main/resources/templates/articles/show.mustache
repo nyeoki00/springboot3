@@ -1,5 +1,6 @@
 {{>layouts/header}}
 
+    {{#article}}
     <table class="table">
         <tread>
             <tr>
@@ -7,14 +8,16 @@
                 <th scope="col">Title</th>
                 <th scope="col">Content</th>
             </tr>
-            {{#article}}
                 <tr>
                     <th>{{id}}</th>
                     <td>{{title}}</td>
                     <td>{{content}}</td>
                 </tr>
-            {{/article}}
+
         </tread>
     </table>
-
+    <a href="/articles/{{id}}/edit" class="btn btn-primary">Edit</a>
+    <a href="/articles/{{id}}/delete" class="btn btn-danger">Delete</a>
+    <a href="/articles">Go to Article List</a>
+    {{/article}}
 {{>layouts/footer}}

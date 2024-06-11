@@ -1,5 +1,5 @@
 {{>layouts/header}}
-
+    {{#member}}
     <table class="table">
         </tread>
             <tr>
@@ -8,14 +8,15 @@
                 <th scope="col">Password</th>
             </tr>
 
-            {{#member}}
-                <tr>
-                    <th>{{id}}</th>
-                    <td>{{email}}</td>
-                    <td>{{password}}</td>
-                </tr>
-            {{/member}}
+            <tr>
+                <th>{{id}}</th>
+                <td>{{email}}</td>
+                <td>{{password}}</td>
+            </tr>
         </tread>
     </table>
-
+    <a href="/members/{{id}}/edit" class="btn btn-primary">Edit</a>
+    <a href="/members/{{id}}/delete" class="btn btn-danger">Delete</a>
+    <a href="/members">Go to member list</a>
+    {{/member}}
 {{>layouts/footer}}
