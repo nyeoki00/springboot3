@@ -17,11 +17,12 @@
     <tbody th:each="article : ${articleList}">
     <tr>
         <th th:text="${article.getId()}">1</th>
-        <td th:text="${article.getTitle()}">제목 1111</td>
+        <td><a th:href="@{|/articles/${article.id}|}" th:text="${article.getTitle()}" >제목 1111</a></td>
         <td th:text="${article.getContent()}">내용 1111</td>
     </tr>
     </tbody>
 </table>
+<a th:href="@{/articles/new}" href="new.html">New Article</a>
 <footer th:replace="fragments/footer.html :: footer"></footer>
 </body>
 </html>

@@ -33,10 +33,10 @@ public class ArticleController {
         // 2. 리파지터리를 엔티티를 DB에 저장
         Article saved = articleRepository.save(article);
         log.info("DB에 저장된 Article 엔티티 : {}",saved);
-        return "articles/new";
+        return "redirect:/articles/"+saved.getId();
     }
 
-    @GetMapping("/article/{id}") //데이터 조회 요청 접수
+    @GetMapping("/articles/{id}") //데이터 조회 요청 접수
     public String show(@PathVariable Long id, Model model){
         log.info("id : {}",id);
         // id를 조회해 데이터를 가져오기
