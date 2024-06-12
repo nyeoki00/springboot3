@@ -26,4 +26,16 @@ public class Article {
                 ", content='" + content + '\'' +
                 '}';
     }
+
+    public void patch(Article article) {
+        if(article.getTitle() != null){
+            title = article.getTitle();
+        }
+
+        if(article.getContent() != null){
+            content = article.getContent();
+        }
+
+
+    }
 }
