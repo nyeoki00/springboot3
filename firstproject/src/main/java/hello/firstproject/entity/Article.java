@@ -5,8 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Entity
+
 @Getter
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 public class Article {
@@ -17,6 +18,8 @@ public class Article {
     private String title;
     @Column
     private String content;
+
+
 
     @Override
     public String toString() {
