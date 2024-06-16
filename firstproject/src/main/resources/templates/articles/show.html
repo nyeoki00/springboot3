@@ -31,6 +31,8 @@
     <a class="btn btn-danger" th:href="@{|/articles/${article.id}/delete|}">Delete</a>
     <a href="/articles">Go To Article List</a>
 
+    <th:block th:insert="~{comments/_comments :: comment}"/>
+
     <div th:insert="~{layouts/footer :: footer}"></div>
 </body>
 </html>

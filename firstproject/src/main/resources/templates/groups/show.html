@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <th:block th:insert="~{layouts/header :: header}"/>
+
+    <h1 class="px-2" th:text="${groupDto.name}"></h1>
+    <ol>
+    <th:block th:each="teamDto : ${teamDtoList}">
+        <li><img width="100px" height="100px" th:src="@{${teamDto.imageUrl}}" alt=""><span th:text="${teamDto.name}"></span></li>
+    </th:block>
+    </ol>
+
+    <th:block th:insert="~{layouts/footer :: footer}"/>
+</body>
+</html>

@@ -36,3 +36,11 @@ INSERT INTO pizza(name, price) VALUES('불고기 피자', '29,900');
 INSERT INTO pizza(name, price) VALUES('고구마 피자', '30,900');
 INSERT INTO pizza(name, price) VALUES('포테이토 피자', '27,900');
 INSERT INTO pizza(name, price) VALUES('치즈 피자', '23,900');
+
+-- 16장 셀프체크 데이터 추가
+INSERT INTO group22(name) VALUES('H');
+
+INSERT INTO team(group_id, name, image_url) VALUES(1, 'Porutugal', 'https://i.namu.wiki/i/vgtbFhAyVcUh5iSZgGa6oV2jNJUKLylCYTjzEw39lnwd007dI9ApwDSRAu_XRnATHU6B2vtgMpCes6qip2zf2qK1qb_oye7AqQO-izaUtHA.svg');
+INSERT INTO team(group_id, name, image_url) VALUES(1, 'Ghana', 'https://i.namu.wiki/i/vgtbFhAyVcUh5iSZgGa6oep5jCtJjRP01THHCLogQCU_oooLo73tjmgXxc7ACFS7raeyUIFvTyvzhTShvEySxIFdwAwqWW_VD--4MmwvlHc.svg');
+INSERT INTO team(group_id, name, image_url) VALUES(1, 'Uruguay', 'https://i.namu.wiki/i/vgtbFhAyVcUh5iSZgGa6oWtD0XnOkNLl19aq1BPTOfDVeLLUC9IkaCoUSeaTbsXrWEFFWTp0FlcAglx9tkX0w1mRoKLEJ9XzRlEeP1QvzZ8.svg');
+INSERT INTO team(group_id, name, image_url) VALUES(1, 'Korea', 'https://i.namu.wiki/i/vgtbFhAyVcUh5iSZgGa6oaddeKfC0cRApQvmLFbaBZAk8_6ObzT_dI1vVJ-70U3KWObAYpppT4GX4skGGASA4VZoKlBtEhsly9kERp13Wk4.svg');
