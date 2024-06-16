@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>셀프체크 17</title>
+</head>
+<body>
+    <h1>Hello, <span id="target">World</span>! </h1>
+    <input type="text" id="text-input">
+    <button id="send-btn">전송</button>
+    <script>
+        {
+            // 자바 스크립트 코드 작성
+            const send = document.querySelector("#send-btn");
+            const target = document.querySelector("#target");
+            send.addEventListener("click", function () {
+                const replace = document.querySelector("#text-input").value;
+                console.log("버튼 클릭");
+                console.log(replace);
+                target.innerText = replace;
+            });
+        }
+    </script>
+</body>
+</html>
