@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="kr">
+<body>
+<div th:fragment="_list (commentDtos)">
+    <div th:each="commentDto : ${commentDtos}">
+        <!-- m-1, m-2, ... , m-* 클래스로 마진 조절 가능-->
+        <div class="card m-2" th:id="|comments-${commentDto.id}|">
+            <div class="card-header" th:text="${commentDto.nickname}">
+
+            </div>
+            <div class="card-body" th:text="${commentDto.body}">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="kr">
+<body>
+    <div th:fragment="_comments (commentDtos)">
+        <!-- 댓글 목록 보기 -->
+        <th:block th:replace="fragments/comments/_list.html::_list(${commentDtos})"></th:block>
+        <!--  새 댓글 작성하기  -->
+        <th:block th:replace="fragments/comments/_new"></th:block>
+    </div>
+
+</body>

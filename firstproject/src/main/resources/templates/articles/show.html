@@ -25,6 +25,7 @@
 <a th:href="@{|/articles/${article.id}/edit|}" href="/articles/edit.html" class="btn btn-primary">Edit</a>
 <a th:href="@{|/articles/${article.id}/delete|}" href="/articles/edit.html" class="btn btn-danger">Delete</a>
 <a th:href="@{/articles}" href="index.html">Go to Article List</a>
+<th:block th:replace="fragments/comments/_comments.html :: _comments(${commentDtos})"></th:block>
 <footer th:replace="fragments/footer.html :: footer"></footer>
 </body>
 </html>
