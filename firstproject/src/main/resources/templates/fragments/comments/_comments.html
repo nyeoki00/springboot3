@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="kr">
 <body>
-    <div th:fragment="_comments (commentDtos)">
+    <div th:fragment="_comments (commentDtos,article)">
         <!-- 댓글 목록 보기 -->
         <th:block th:replace="fragments/comments/_list.html::_list(${commentDtos})"></th:block>
         <!--  새 댓글 작성하기  -->
-        <th:block th:replace="fragments/comments/_new"></th:block>
+        <th:block th:replace="fragments/comments/_new :: _new(${article})"></th:block>
     </div>
 
 </body>

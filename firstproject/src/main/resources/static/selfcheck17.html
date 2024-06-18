@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>셀프체크 17</title>
+</head>
+<body>
+<h1>Hello, <span id="target">World</span>!</h1>
+<input type="text" id="text-input">
+<button id="send-btn">전송</button>
+    <script>
+        // 자바스크립트 코드 작성
+        const btn = document.querySelector("#send-btn");
+        btn.addEventListener("click",function () {
+            document.querySelector("#target").innerText="스프링 부트!"
+        });
+        
+        
+    </script>
+</body>
+</html>

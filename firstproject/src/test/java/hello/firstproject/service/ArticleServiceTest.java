@@ -21,6 +21,7 @@ class ArticleServiceTest {
     ArticleService articleService;
 
     @Test
+    @Transactional(readOnly = true)
     void index() {
         // 1. 예상 데이터
         Article a = new Article(1L,"가가가가","1111");
