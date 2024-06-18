@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>comments.html</title>
+</head>
+<body>
+
+<div th:fragment="comments">
+
+    <div th:insert="~{comments/_list :: list}"></div>
+
+    <div th:insert="~{comments/_new :: new}"></div>
+
+</div>
+
+</body>
+</html>

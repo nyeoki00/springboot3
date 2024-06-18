@@ -12,10 +12,10 @@ import lombok.ToString;
 @Data
 public class CoffeeDto {
     private Long id;
-    private String menu;
+    private String name;
     private int price;
 
     public Coffee toEntity() {
-        return new Coffee(id, menu, price);
+        return new Coffee(id, name, price);
     }
 }

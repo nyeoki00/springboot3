@@ -19,15 +19,15 @@ public class Coffee {
     private Long id;
 
     @Column
-    private String menu;
+    private String name;
 
     @Column
     private int price;
 
 
     public void patch(Coffee coffee) {
-        if (coffee.menu != null) {
-            this.menu = coffee.menu;
+        if (coffee.name != null) {
+            this.name = coffee.name;
         }
 
         Optional<Integer> i = Optional.of(coffee.price);

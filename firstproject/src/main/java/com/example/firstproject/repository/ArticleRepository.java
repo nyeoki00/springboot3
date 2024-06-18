@@ -7,6 +7,6 @@ import java.util.ArrayList;
 
 public interface ArticleRepository extends CrudRepository<Article, Long> {
     @Override
-    // Iterable<Article> findAll();
+        // Iterable<Article> findAll();
     ArrayList<Article> findAll();  // Iterable -> ArrayList
 }

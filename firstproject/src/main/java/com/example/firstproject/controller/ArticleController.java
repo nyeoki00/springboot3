@@ -1,8 +1,10 @@
 package com.example.firstproject.controller;
 
 import com.example.firstproject.dto.ArticleForm;
+import com.example.firstproject.dto.CommentDto;
 import com.example.firstproject.entity.Article;
 import com.example.firstproject.repository.ArticleRepository;
+import com.example.firstproject.service.CommentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,9 @@ public class ArticleController {
 
     @Autowired // 스프링 부트가 미리 생성해 놓은 리파지터리 객체 주입 (DI, Dependency Injection)
     private ArticleRepository articleRepository;
+
+    @Autowired
+    private CommentService commentService;
 
 
     @GetMapping("/articles/new")
@@ -52,9 +57,12 @@ public class ArticleController {
         // 1. id를 조회해서 데이터 가져오기 (데이터는 리파지토리로 가져옴)
         // Optional<Article> articleEntity = articleRepository.findById(id);
         Article articleEntity = articleRepository.findById(id).orElse(null);
+        // 댓글 목록 가져오기
+        List<CommentDto> commentsDtos = commentService.comments(id);
 
         // 2. 모델에 데이터 등록하기
         model.addAttribute("article", articleEntity);
+        model.addAttribute("commentDtos", commentsDtos);
 
         // 3. 뷰 페이지 반환하기
         return "articles/show";
