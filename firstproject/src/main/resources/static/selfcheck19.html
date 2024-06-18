@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <ul>
+        <li class="prerequisite">HTML</li>
+        <li class="prerequisite">CSS</li>
+        <li class="prerequisite">JavaScript</li>
+        <li class="prerequisite">Java</li>
+        <li>SQL</li>
+        <li>Spring Boot</li>
+    </ul>
+<script>
+    {
+        // 이미 수정한 과목은 취소선 처리
+        const cancelSubjects = document.querySelectorAll(".prerequisite");
+        cancelSubjects.forEach(subject => {
+            console.log(subject.innerHTML);
+            subject.innerHTML = "<s>" + subject.innerHTML + "</s>";
+        });
+    }
+</script>
+</body>
+</html>
