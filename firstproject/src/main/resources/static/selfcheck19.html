@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>셀프체크 19</title>
+</head>
+<body>
+<h1>Hello, World!</h1>
+<ul>
+    <li class="prerequisite">HTML</li>
+    <li class="prerequisite">CSS</li>
+    <li class="prerequisite">JavaScript</li>
+    <li class="prerequisite">Java</li>
+    <li>SQL</li>
+    <li>Spring Boot</li>
+</ul>
+<script>
+    // 이미 수강한 과목은 취소선 처리
+    const liElement = document.querySelector("li");
+    liElement.style.textDecoration = "line-through";
+
+    const selectorAll = document.querySelectorAll(".prerequisite");
+    selectorAll.forEach(list => {
+       list.style.textDecoration="line-through";
+    });
+</script>
+</body>
+</html>

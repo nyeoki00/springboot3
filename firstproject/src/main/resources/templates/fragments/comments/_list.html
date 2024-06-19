@@ -9,13 +9,17 @@
                 <span th:text="${commentDto.nickname}"></span>
                 <!-- Button trigger modal -->
                 <button type="button"
-                        class="btn btn-primary"
+                        class="btn btn-sm btn-outline-primary"
                         data-bs-toggle="modal"
                         data-bs-target="#comment-edit-modal"
                         th:data-bs-id="${commentDto.id}"
                         th:data-bs-nickname="${commentDto.nickname}"
                         th:data-bs-body="${commentDto.body}"
                         th:data-bs-article-id="${commentDto.articleId}">수정</button>
+                <!-- 댓글 삭제 버튼 -->
+                <button type="button"
+                        class="btn btn-sm btn-outline-danger comment-delete-btn"
+                        th:data-comment-id="${commentDto.id}">삭제</button>
             </div>
             <div class="card-body" th:text="${commentDto.body}">
             </div>
@@ -99,6 +103,43 @@
                    //현재 페이지 새로고침
                     window.location.reload();
                 });
+            });
+        }
+    </script>
+    <!--댓글 삭제-->
+    <script>
+        {
+            // 삭제 버튼 선택
+        //  const commentDeleteBtn = document.querySelector(".comment-delete-btn"); // 같은 클래스 선택자가 많아도 처음 버튼 하나만 선택되어짐
+        //  commentDeleteBtn.addEventListener("click",function(){
+        //  console.log("삭제 버튼이 클릭 되었습니다");
+        // });
+            const commentDeleteBtns = document.querySelectorAll(".comment-delete-btn");
+            commentDeleteBtns.forEach(btn =>{
+               btn.addEventListener("click",(event) =>{
+                  //console.log("삭제 버튼이 클릭 되었습니다");
+                  // 이벤트 발생 요소 선택
+                  const commentDeleteBtn = event.target;
+                  // 삭제탯글 가져오기
+                   const commentId = commentDeleteBtn.getAttribute("data-comment-id");
+                   console.log(`삭제 버튼 클릭 :${commentId}번 댓글`);
+                   //삭제 REST API 호출
+                   const url = `/api/comments/${commentId}`;
+                   fetch(url,{
+                       method:"DELETE"
+                   }).then(response=>{
+                       // 댓글 삭제 실패
+                       if(!response.ok){
+                           alert("댓글 삭제 실패...!");
+                           return;
+                       }
+                       // 삭제 성공 시 메시지 창 띄우기
+                       const msg =`${commentId}번 댓글을 삭제했습니다.`;
+                       alert(msg);
+                       // 현재 페이지 새로 고침
+                       window.location.reload();
+                   });
+               });
             });
         }
     </script>
